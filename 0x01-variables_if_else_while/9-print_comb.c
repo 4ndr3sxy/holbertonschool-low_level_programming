@@ -13,7 +13,8 @@ int main(void)
 	{
 		putchar(num);
 		putchar(num != 57 ? ',' : '\n');
-		putchar(num != 57 ? ' ' : '\n');
+		if (num < 57)
+			putchar(' ');
 	}
 	return (0);
 }
