@@ -12,9 +12,8 @@ int main(void)
 	for (num = 48; num < 58; num++)
 	{
 		putchar(num);
-		putchar(num == 57 ? '$' : ',');
-		putchar(' ');
+		putchar(num != 57 ? ',' : '\n');
+		putchar(num != 57 ? ' ' : '\n');
 	}
-	putchar('\n');
 	return (0);
 }
