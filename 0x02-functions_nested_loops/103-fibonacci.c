@@ -6,7 +6,6 @@
  */
 void fibonacci(void)
 {
-	int i;
 	long num1 = 0;
 	long num2 = 1;
 	long sum = 0;
