@@ -14,14 +14,3 @@ void print_alphabet(void)
 		_putchar(ch);
 	_putchar('\n');
 }
-
-/**
- * main - Initial function
- * Description: show/print alphabet from a function
- * Return: return 0 to success
- */
-int main(void)
-{
-	print_alphabet();
-	return (0);
-}
