@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "holberton.h"
 
 /**
  * print_alphabet - called in main()
@@ -10,8 +11,8 @@ int print_alphabet(void)
 	char ch = 97;
 
 	for (ch = 97; ch < 123; ch++)
-		putchar(ch);
-	putchar('\n');
+		_putchar(ch);
+	_putchar('\n');
 	return (0);
 }
 
