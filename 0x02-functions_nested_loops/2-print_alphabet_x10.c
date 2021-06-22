@@ -6,7 +6,7 @@
  * Description: show/print ten times the alphabet
  * Return: return 0 to success
  */
-int print_alphabet_x10(void)
+void print_alphabet_x10(void)
 {
 	char ch = 97;
 	int i;
@@ -17,7 +17,6 @@ int print_alphabet_x10(void)
 			_putchar(ch);
 		_putchar('\n');
 	}
-	return (0);
 }
 
 /**
