@@ -6,14 +6,13 @@
  * Description: show/print alphabet from a function
  * Return: return 0 to success
  */
-int print_alphabet(void)
+void print_alphabet(void)
 {
 	char ch = 97;
 
 	for (ch = 97; ch < 123; ch++)
 		_putchar(ch);
 	_putchar('\n');
-	return (0);
 }
 
 /**
