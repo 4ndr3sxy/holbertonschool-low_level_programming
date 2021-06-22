@@ -34,7 +34,7 @@ void validate_ends(int i, int j, int n)
 		_putchar(',');
 		_putchar(' ');
 	}
-	if ((i * (j + 1)) < 100)
+	if ((i * (j + 1)) < 100 && j != n)
 		_putchar(' ');
 
 	if (i == 0 && j != n)
