@@ -15,7 +15,15 @@ void fibonacci(void)
 	{
 		tmpResult = num1 + num2;
 
-		printf("%lld", tmpResult);
+		if (i == 82)
+		{
+			/* code */
+		}
+		else
+		{
+			printf("%ld", tmpResult);
+		}
+
 		putchar(i != 98 ? ',' : '\n');
 		if (i != 98)
 		{
