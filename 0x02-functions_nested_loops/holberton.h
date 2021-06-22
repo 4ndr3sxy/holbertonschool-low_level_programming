@@ -39,3 +39,9 @@ void print_to_98(int n);
 
 /* print_times_table - print n times tables, between n in n */
 void print_times_table(int n);
+
+/* validate_ends - Called to print_times_table */
+void validate_ends(int i, int j, int n);
+
+/* validate_ends - Called to print_times_table */
+void split_3_digits(int p1, int p2, int tmp);
