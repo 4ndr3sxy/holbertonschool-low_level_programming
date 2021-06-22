@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "holberton.h"
 
 /**
  * main - Initial function
@@ -12,8 +13,8 @@ int main(void)
 
 	for (i = 0; i < 9; i++)
 	{
-		putchar(letters[i]);
+		_putchar(letters[i]);
 	}
-	putchar('\n');
+	_putchar('\n');
 	return (0);
 }
