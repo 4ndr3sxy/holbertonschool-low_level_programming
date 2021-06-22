@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "holberton.h"
 
 /**
@@ -17,15 +16,4 @@ void print_alphabet_x10(void)
 			_putchar(ch);
 		_putchar('\n');
 	}
-}
-
-/**
- * main - Initial function
- * Description: call a function print_alphabet
- * Return: return 0 to success
- */
-int main(void)
-{
-	print_alphabet_x10();
-	return (0);
 }
