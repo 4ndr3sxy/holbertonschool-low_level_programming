@@ -17,8 +17,8 @@ void print_to_98(int n)
 			printf("%d", i);
 			if (i != 98)
 			{
-				_putchar(',');
-				_putchar(' ');
+				putchar(',');
+				putchar(' ');
 			}
 		}
 	}
@@ -29,10 +29,10 @@ void print_to_98(int n)
 			printf("%d", i);
 			if (i != 98)
 			{
-				_putchar(',');
-				_putchar(' ');
+				putchar(',');
+				putchar(' ');
 			}
 		}
 	}
-	_putchar('\n');
+	putchar('\n');
 }
