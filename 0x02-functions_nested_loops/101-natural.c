@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 
 /**
  * sum_naturals - called by main()
@@ -19,4 +18,14 @@ void sum_naturals(void)
 		}
 	}
 	printf("%d\n", sumMultiples);
+}
+
+/**
+ * main - Initial function
+ * Return: return 0 to success
+ */
+int main(void)
+{
+	sum_naturals();
+	return (0);
 }
