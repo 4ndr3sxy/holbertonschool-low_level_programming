@@ -11,8 +11,9 @@
 void split_3_digits(int p1, int p2, int tmp)
 {
 	p1 = tmp / 100;
-	int p3 = (tmp / 10) % 10;
+	int p3;
 
+	p3 = (tmp / 10) % 10;
 	_putchar(p1 + '0');
 	_putchar(p3 + '0');
 	_putchar(p2 + '0');
