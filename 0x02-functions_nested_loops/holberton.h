@@ -1,3 +1,6 @@
+#include <unistd.h>
+#include <stdio.h>
+
 /* _putchar - print a character */
 int _putchar(char c);
 
