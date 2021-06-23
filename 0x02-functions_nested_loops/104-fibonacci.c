@@ -7,15 +7,15 @@
 void fibonacci(void)
 {
 	int i;
-	long num1 = 0;
-	long num2 = 1;
-	long tmpResult;
+	long double num1 = 0;
+	long double num2 = 1;
+	long double tmpResult;
 
 	for (i = 1; i <= 98; i++)
 	{
 		tmpResult = num1 + num2;
 
-		printf("%ld", tmpResult);
+		printf("%Lf", tmpResult);
 
 		putchar(i != 98 ? ',' : '\n');
 		if (i != 98)
