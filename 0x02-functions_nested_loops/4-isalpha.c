@@ -6,7 +6,7 @@
  * @ch: Character to validate
  * Return: return 0 to success
  */
-int _isalpha(char ch)
+int _isalpha(int ch)
 {
 	if ((ch >=  97 && ch <= 122) || (ch >=  65 && ch <= 90))
 		return (1);
