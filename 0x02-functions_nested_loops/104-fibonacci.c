@@ -7,6 +7,7 @@
 void fibonacci(void)
 {
 	int i;
+
 	long double num1 = 0;
 	long double num2 = 1;
 	long double tmpResult;
@@ -15,7 +16,7 @@ void fibonacci(void)
 	{
 		tmpResult = num1 + num2;
 
-		printf("%Lf", tmpResult);
+		printf("%.0Lf", tmpResult);
 
 		putchar(i != 98 ? ',' : '\n');
 		if (i != 98)
