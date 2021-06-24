@@ -7,7 +7,7 @@
  */
 void print_number(int n)
 {
-	int arr[sizeof(int) * 4];
+	int arr[sizeof(int) * 16];
 	int i = 0;
 	int j, r;
 
