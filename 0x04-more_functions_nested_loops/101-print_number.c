@@ -22,17 +22,17 @@ void print_number(int n)
 		}
 		for (j = i - 1; j > -1; j--)
 		{
-			putchar(arr[j] + '0');
+			_putchar(arr[j] + '0');
 		}
 	}
 	else if (n == 0)
 	{
-		putchar('0');
+		_putchar('0');
 	}
 	else
 	{
 		n *= -1;
-		putchar('-');
+		_putchar('-');
 		while (n != 0)
 		{
 			r = n % 10;
@@ -42,7 +42,7 @@ void print_number(int n)
 		}
 		for (j = i - 1; j > -1; j--)
 		{
-			putchar(arr[j] + '0');
+			_putchar(arr[j] + '0');
 		}
 	}
 }
