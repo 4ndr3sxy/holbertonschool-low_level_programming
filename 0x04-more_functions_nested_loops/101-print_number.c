@@ -7,37 +7,42 @@
  */
 void print_number(int n)
 {
-	if (n >= 0)
-	{
-		if (n < 10)
-		{
-			_putchar(n + '0');
-		}
-		else if (n < 100)
-		{
-			_putchar(n / 10 + '0');
-			_putchar(n % 10 + '0');
-		}
-		else if (n < 1000)
-		{
-			_putchar(n / 100 + '0');
-			_putchar(((n / 10) % 10) + '0');
-			_putchar(n % 10 + '0');
-		}
-		else
-		{
-			_putchar(n / 1000 + '0');
-			_putchar(((n / 100) % 10) + '0');
-			_putchar(((n / 10) % 10) + '0');
-			_putchar(n % 10 + '0');
+	int arr[sizeof(int) * 4];
+	int i = 0;
+	int j, r;
 
+	if (n > 0)
+	{
+		while (n != 0)
+		{
+			r = n % 10;
+			arr[i] = r;
+			i++;
+			n = n / 10;
 		}
+		for (j = i - 1; j > -1; j--)
+		{
+			putchar(arr[j] + '0');
+		}
+	}
+	else if (n == 0)
+	{
+		putchar('0');
 	}
 	else
 	{
 		n *= -1;
-		_putchar('-');
-		_putchar(n / 10 + '0');
-		_putchar(n % 10 + '0');
+		putchar('-');
+		while (n != 0)
+		{
+			r = n % 10;
+			arr[i] = r;
+			i++;
+			n = n / 10;
+		}
+		for (j = i - 1; j > -1; j--)
+		{
+			putchar(arr[j] + '0');
+		}
 	}
 }
