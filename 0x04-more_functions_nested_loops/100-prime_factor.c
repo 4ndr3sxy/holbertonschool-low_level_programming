@@ -5,7 +5,7 @@
  * @num: number to validate
  * Return: without return
  */
-void prime_factor(int num)
+void prime_factor(long int num)
 {
 	int i, j;
 	int prime;
@@ -41,4 +41,14 @@ void prime_factor(int num)
 		}
 	}
 	printf("%d\n", primeLargest);
+}
+
+/**
+ * main - Initial function
+ * Return: return 0 to success
+ */
+int main(void)
+{
+	prime_factor(61285247);
+	return (0);
 }
