@@ -45,10 +45,3 @@ void print_number(int n)
 		putchar('0');
 	}
 }
-
-int main(void)
-{
-	print_number(0);
-	putchar('\n');
-	return (0);
-}
