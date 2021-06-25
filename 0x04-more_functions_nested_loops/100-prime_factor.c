@@ -5,7 +5,7 @@
  * @num: number to validate
  * Return: without return
  */
-void prime_factor(long int num)
+void prime_factor(int num)
 {
 	int i, j;
 	int prime;

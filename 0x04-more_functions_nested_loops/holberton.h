@@ -25,7 +25,7 @@ void print_triangle(int size);
 
 void print_number(int n);
 
-void prime_factor(void);
+void prime_factor(int num);
 
 int _putchar(char c);
 
