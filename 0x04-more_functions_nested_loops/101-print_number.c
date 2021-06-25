@@ -17,7 +17,7 @@ void print_number(int n)
 		if (n < 0)
 		{
 			n *= -1;
-			putchar('-');
+			_putchar('-');
 		}
 		while (n != 0)
 		{
@@ -32,16 +32,16 @@ void print_number(int n)
 			{
 				int val = arr[j] * -1;
 
-				putchar(val + '0');
+				_putchar(val + '0');
 			}
 			else
 			{
-				putchar(arr[j] + '0');
+				_putchar(arr[j] + '0');
 			}
 		}
 	}
 	else
 	{
-		putchar('0');
+		_putchar('0');
 	}
 }
