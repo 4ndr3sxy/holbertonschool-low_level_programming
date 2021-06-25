@@ -1,15 +1,15 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
  * prime_factor - Initial function
+ * @num: number to validate
  * Return: without return
  */
-void prime_factor(void)
+void prime_factor(long int num)
 {
-	long int i, j;
-	long int num = 612852475143;
+	int i, j;
 	int prime;
-	long int primeLargest = 0;
+	int primeLargest = 0;
 	int val = 0;
 
 	for (i = 2; i <= num; i++)
@@ -40,15 +40,5 @@ void prime_factor(void)
 			}
 		}
 	}
-	printf("%ld\n", primeLargest);
-}
-
-/**
- * main - Initial function
- * Return: return 0 to success
- */
-int main(void)
-{
-	prime_factor();
-	return (0);
+	printf("%d\n", primeLargest);
 }
