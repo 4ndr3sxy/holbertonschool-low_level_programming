@@ -12,7 +12,7 @@ void prime_factor(long int num)
 	int primeLargest = 0;
 	int val = 0;
 
-	for (i = 2; i <= num; i++)
+	for (i = 2 ; i <= num / 5000; i++)
 	{
 		if (num % i == 0)
 		{
@@ -49,6 +49,6 @@ void prime_factor(long int num)
  */
 int main(void)
 {
-	prime_factor(61285247);
+	prime_factor(612852475143);
 	return (0);
 }
