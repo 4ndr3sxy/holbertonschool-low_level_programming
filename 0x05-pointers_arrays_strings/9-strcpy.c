@@ -17,7 +17,7 @@ char *_strcpy(char *dest, char *src)
 		j++;
 		if (*src == '\n')
 			i++;
-		*src++;
+		src++;
 	}
 	return (dest);
 }
