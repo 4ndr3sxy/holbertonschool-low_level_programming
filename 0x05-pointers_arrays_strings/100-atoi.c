@@ -19,7 +19,6 @@ int _atoi(char *s)
 		}
 		if (*s >= '0' && *s <= '9')
 		{
-			s[5];
 			char i1 = (int) *s;
 			int i2 = i1 - '0';
 
