@@ -21,6 +21,9 @@ int _atoi(char *s)
 		}
 		if (*s >= '0' && *s <= '9')
 		{
+			char i1 = (int)*s;
+			int i2 = i1 - '0';
+
 			if (*s == '9')
 			{
 				nine++;
@@ -29,8 +32,6 @@ int _atoi(char *s)
 					return (tmpVal == 1 ? val * -1 : val);
 				}
 			}
-			char i1 = (int)*s;
-			int i2 = i1 - '0';
 
 			val = (val * increm) + i2;
 		}
