@@ -11,7 +11,6 @@ int _atoi(char *s)
 	int tmpVal = 0;
 	int increm = 10;
 	int count = 0;
-	int nine = 0;
 
 	while (*s != '\0')
 	{
@@ -19,22 +18,14 @@ int _atoi(char *s)
 		{
 			tmpVal = 1;
 		}
-		if (*s >= '0' && *s <= '9')
+		else if (*s >= '0' && *s <= '9')
 		{
 			char i1 = (int)*s;
 			int i2 = i1 - '0';
-
-			if (*s == '9')
-			{
-				nine++;
-				if (nine == 2)
-				{
-					return (tmpVal == 1 ? val * -1 : val);
-				}
-			}
-
 			val = (val * increm) + i2;
 		}
+		else if (val > 0)
+            break;
 		count++;
 		s++;
 	}
