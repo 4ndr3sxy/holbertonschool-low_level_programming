@@ -8,15 +8,15 @@
 int _atoi(char *s)
 {
 	unsigned int val = 0;
-	int tmpVal = 0;
+	int tmpVal = 1;
 	int increm = 10;
 	int count = 0;
 
 	while (*s != '\0')
 	{
-		if (*s == '-' && (s[count + 1] >= '0' && s[count + 1] <= '9'))
+		if (s[count] == '-')
 		{
-			tmpVal = 1;
+			tmpVal *= -1;
 		}
 		else if (*s >= '0' && *s <= '9')
 		{
@@ -26,9 +26,11 @@ int _atoi(char *s)
 			val = (val * increm) + i2;
 		}
 		else if (val > 0)
+		{
 			break;
+		}
 		count++;
 		s++;
 	}
-	return (tmpVal == 1 ? val * -1 : val);
+	return (tmpVal < 0 ? val * -1 : val);
 }
