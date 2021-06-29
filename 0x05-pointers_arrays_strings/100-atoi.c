@@ -22,10 +22,11 @@ int _atoi(char *s)
 		{
 			char i1 = (int)*s;
 			int i2 = i1 - '0';
+
 			val = (val * increm) + i2;
 		}
 		else if (val > 0)
-            break;
+			break;
 		count++;
 		s++;
 	}
