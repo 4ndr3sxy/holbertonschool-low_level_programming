@@ -14,7 +14,7 @@ int _atoi(char *s)
 
 	while (*s != '\0')
 	{
-		if (s[count] == '-')
+		if (*s == '-')
 		{
 			tmpVal *= -1;
 		}
