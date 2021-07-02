@@ -17,10 +17,6 @@ char *rot13(char *cc)
 		{
 			cc[i] = cc[i] + 13;
 		}
-		else
-		{
-			cc[i] = cc[i] - 13;
-		}
 	}
 	return (cc);
 }
