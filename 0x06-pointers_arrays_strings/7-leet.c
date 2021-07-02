@@ -7,18 +7,12 @@
  */
 char *leet(char *cc)
 {
-	int sizeC = 0;
 	int i, j;
 
 	char letter[] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
 	char number[] = {'4', '4', '3', '3', '0', '0', '7', '7', '1', '1'};
 
-	while (cc[sizeC])
-	{
-		sizeC++;
-	}
-
-	for (i = 0; i < sizeC; i++)
+	for (i = 0; cc[i]; i++)
 	{
 		for (j = 0; j < 10; j++)
 		{
