@@ -8,7 +8,6 @@
 void print_number(int n)
 {
 	int n1 = n;
-	int arr[sizeof(int) * 8];
 	int i = 0;
 	int j, r;
 
@@ -22,7 +21,6 @@ void print_number(int n)
 		while (n != 0)
 		{
 			r = n % 10;
-			arr[i] = r;
 			i++;
 			n = n / 10;
 		}
@@ -30,13 +28,9 @@ void print_number(int n)
 		{
 			if (n1 < -2147483647)
 			{
-				int val = arr[j] * -1;
+				int val = -1;
 
 				_putchar(val + '0');
-			}
-			else
-			{
-				_putchar(arr[j] + '0');
 			}
 		}
 	}
