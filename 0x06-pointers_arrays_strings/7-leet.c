@@ -8,7 +8,10 @@
 char *leet(char *cc)
 {
 	int sizeC = 0;
-	int i;
+	int i, j;
+
+	char letter[] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
+	char number[] = {'4', '4', '3', '3', '0', '0', '7', '7', '1', '1'};
 
 	while (cc[sizeC])
 	{
@@ -17,25 +20,13 @@ char *leet(char *cc)
 
 	for (i = 0; i < sizeC; i++)
 	{
-		if (*(cc + i) == 65 || *(cc + i) == 97)
+		for (j = 0; j < 10; j++)
 		{
-			*(cc + i) = '4';
-		}
-		else if (*(cc + i) == 69 || *(cc + i) == 101)
-		{
-			*(cc + i) = '3';
-		}
-		else if (*(cc + i) == 79 || *(cc + i) == 111)
-		{
-			*(cc + i) = '0';
-		}
-		else if (*(cc + i) == 84 || *(cc + i) == 116)
-		{
-			*(cc + i) = '7';
-		}
-		else if (*(cc + i) == 76 || *(cc + i) == 108)
-		{
-			*(cc + i) = '1';
+			if (cc[i] == letter[j])
+			{
+				cc[i] = number[j];
+				break;
+			}
 		}
 	}
 	return (cc);
