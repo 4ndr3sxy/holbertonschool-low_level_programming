@@ -7,10 +7,9 @@
  */
 char *rot13(char *cc)
 {
-	int sizeC = 0;
 	int i = 0;
 
-	for (i = 0; i < sizeC; i++)
+	for (i = 0; cc[i]; i++)
 	{
 		if ((*(cc + i) >= 97 && *(cc + i) <= 109) ||
 		(*(cc + i) >= 65 && *(cc + i) <= 77))
