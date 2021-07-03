@@ -38,8 +38,10 @@ void print_number(int n)
 				cpN %= 10;
 			}
 		}
-		_putchar(cpN + '0');
+		if (n < -2147483647)
+			_putchar(cpN * -1 + '0');
+		else
+			_putchar(cpN + '0');
 		numberDigits--;
 	}
 }
-
