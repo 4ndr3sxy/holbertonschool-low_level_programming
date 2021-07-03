@@ -10,5 +10,18 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	return ('0');
+	if (*n1 == 0)
+	{
+
+	}
+	if (*n2 == 0)
+	{
+
+	}
+	if (size_r)
+	{
+
+	}
+
+	return (r);
 }
