@@ -22,7 +22,6 @@ char *_strchr(char *s, char c)
 		{
 			result = s + i;
 			val = 1;
-			break;
 		}
 		if (val)
 			break;
