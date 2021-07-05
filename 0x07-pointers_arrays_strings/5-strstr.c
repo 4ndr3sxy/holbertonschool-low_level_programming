@@ -15,7 +15,7 @@ char *_strstr(char *haystack, char *needle)
 		k++;
 	}
 
-	while (*haystack)
+	while (haystack[i])
 	{
 		if (haystack[i] == needle[0])
 		{
@@ -34,7 +34,7 @@ char *_strstr(char *haystack, char *needle)
 				}
 			}
 		}
-		haystack++;
+		i++;
 	}
 	return ('\0');
 }
