@@ -8,18 +8,14 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int i = 0, k = 0, l, val = 0;
+	int i = 0, l, val = 0;
 
-	while (needle[k])
-	{
-		k++;
-	}
 
-	while (haystack[i])
+	while (haystack[i] >= '\0')
 	{
 		if (haystack[i] == needle[0])
 		{
-			for (l = 0; l < k; l++)
+			for (l = 0; needle[l] >= '\0'; l++)
 			{
 				if (haystack[i + l] != needle[l])
 				{
