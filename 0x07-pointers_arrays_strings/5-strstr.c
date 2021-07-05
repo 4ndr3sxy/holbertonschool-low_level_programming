@@ -32,14 +32,3 @@ char *_strstr(char *haystack, char *needle)
 	}
 	return ('\0');
 }
-
-int main(void)
-{
-    char *s = "hello,we world";
-    char *f = "world";
-    char *t;
-
-    t = _strstr(s, f);
-    printf("%s\n", t);
-    return (0);
-}
