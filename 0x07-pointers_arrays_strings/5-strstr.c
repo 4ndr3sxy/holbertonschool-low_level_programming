@@ -11,11 +11,11 @@ char *_strstr(char *haystack, char *needle)
 	int i = 0, l, val = 0;
 
 
-	while (haystack[i] >= '\0')
+	while (haystack[i] != '\0')
 	{
 		if (haystack[i] == needle[0])
 		{
-			for (l = 0; needle[l] >= '\0'; l++)
+			for (l = 0; needle[l] != '\0'; l++)
 			{
 				if (haystack[i + l] != needle[l])
 				{
@@ -27,7 +27,19 @@ char *_strstr(char *haystack, char *needle)
 				return (haystack + i);
 			}
 		}
+		val = 0;
 		i++;
 	}
 	return ('\0');
+}
+
+int main(void)
+{
+    char *s = "hello,we world";
+    char *f = "world";
+    char *t;
+
+    t = _strstr(s, f);
+    printf("%s\n", t);
+    return (0);
 }
