@@ -28,6 +28,6 @@ char *_strchr(char *s, char c)
 			break;
 	}
 	if (!val)
-		return (NULL);
+		return ('\0');
 	return (result);
 }
