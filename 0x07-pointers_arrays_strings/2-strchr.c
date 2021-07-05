@@ -9,7 +9,6 @@
 char *_strchr(char *s, char c)
 {
 	int i, count = 0;
-	char *result;
 
 	while (s[count])
 	{
