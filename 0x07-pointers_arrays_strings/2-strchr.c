@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * _memset - change values in buffer
+ * _strchr - show coincidences
  * @s: chain of characters (buffer)
  * @c: char to search
  * Return: pointer s
