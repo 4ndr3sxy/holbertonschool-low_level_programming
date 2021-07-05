@@ -30,6 +30,7 @@ char *_strpbrk(char *s, char *accept)
 		if (val)
 			break;
 	}
-
+	if(!val)
+		return (NULL);
 	return (s1);
 }
