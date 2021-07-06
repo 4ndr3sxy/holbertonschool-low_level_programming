@@ -21,11 +21,11 @@ char *_strstr(char *haystack, char *needle)
 					break;
 				}
 			}
-			if (needle[l] == '\0')
+			if (!needle[l])
 			{
 				return (haystack + i);
 			}
 		}
 	}
-	return ('\0');
+	return (NULL);
 }
