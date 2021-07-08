@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	{
 		while (argv[i])
 		{
-			if(atoi(argv[i]) > 0 && atoi(argv[i]) <= INT_MAX)
+			if (atoi(argv[i]) > 0 && atoi(argv[i]) <= INT_MAX)
 			{
 				sumNumber += atoi(argv[i]);
 			}
