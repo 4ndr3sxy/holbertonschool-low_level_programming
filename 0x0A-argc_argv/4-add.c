@@ -1,6 +1,26 @@
 #include "holberton.h"
 
 /**
+ *validate - Validate char *
+ *@string: value to validate yours position is all digits
+ *Return: all chars is digits return 0, else 1
+ */
+int validate(char *string)
+{
+	int i = 0;
+
+	while (string[i])
+	{
+		if (!(string[i] >= 48 && string[i] <= 57))
+		{
+			return (1);
+		}
+		i++;
+	}
+	return (0);
+}
+
+/**
  *main - Initial function
  *@argc: number of command line arguments
  *@argv: array containing the program command line arguments
@@ -15,7 +35,9 @@ int main(int argc, char *argv[])
 	{
 		while (argv[i])
 		{
-			if (isdigit(*argv[i]) && atoi(argv[i]) >= 0)
+			int val = validate(argv[i]);
+
+			if (!val)
 			{
 				sumNumber += atoi(argv[i]);
 			}
