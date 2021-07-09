@@ -15,11 +15,9 @@ int main(int argc, char *argv[])
 	{
 		while (argv[i])
 		{
-			if ((atoi(argv[i]) >= INT_MIN && atoi(argv[i]) <= INT_MAX) &&
-			 atoi(argv[i]) != 0)
+			if (isdigit(*argv[i]) && atoi(argv[i]) >= 0)
 			{
-				if (atoi(argv[i]) > 0)
-					sumNumber += atoi(argv[i]);
+				sumNumber += atoi(argv[i]);
 			}
 			else
 			{
