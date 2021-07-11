@@ -10,8 +10,10 @@ int ans_sqrt_recursion(int m, int i)
 {
 	int resultSqrt = i * i;
 
-	if (i >= m)
+	if (i > m)
 		return (-1);
+	if (m == 1)
+		return (1);
 	if (resultSqrt != m)
 	{
 		i++;
@@ -21,7 +23,6 @@ int ans_sqrt_recursion(int m, int i)
 	{
 		return (i);
 	}
-	return (0);
 }
 
 /**
