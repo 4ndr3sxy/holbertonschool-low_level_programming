@@ -8,21 +8,20 @@
  */
 int ans_sqrt_recursion(int m, int i)
 {
-	int resultSqrt = i * i;
-
-	if (i > m)
-		return (-1);
-	if (m == 1)
-		return (1);
-	if (resultSqrt != m)
-	{
-		i++;
-		ans_sqrt_recursion(m, i);
-	}
-	else
+	if (i * i ==  m)
 	{
 		return (i);
 	}
+	else if (i * i > m)
+	{
+		return (-1);
+	}
+	else
+	{
+		i++;
+		return (ans_sqrt_recursion(m, i));
+	}
+	return (0);
 }
 
 /**
