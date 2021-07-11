@@ -48,6 +48,25 @@ int search_palindrome(char *string, int i, int i1, int j)
 }
 
 /**
+ * size_chain - search the size of the chain
+ * @s: Chain
+ * @i: increment
+ * Return: size of chain
+ */
+int size_chain(char *s, int i)
+{
+	if (s[i] == '\0')
+	{
+		return (i);
+	}
+	else
+	{
+		i++;
+		return (size_chain(s, i));
+	}
+}
+
+/**
  * is_palindrome - send the char * to function search_palindrome()
  * @s: Chain of characters
  * Return: 1 to palindrome or 0 to not palindrome.
@@ -56,10 +75,7 @@ int is_palindrome(char *s)
 {
 	int i = 0, i1, j = 0, resultPalindrome;
 
-	while (s[i])
-	{
-		i++;
-	}
+	i = size_chain(s, i);
 	if (i % 2 == 0)
 	{
 		i1 = (i / 2) - 1;
