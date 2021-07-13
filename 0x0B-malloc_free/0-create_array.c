@@ -11,7 +11,7 @@ char *create_array(unsigned int size, char c)
 	char *stringMalloc;
 	unsigned int i = 0;
 
-	stringMalloc = malloc(sizeof(unsigned int)  * size);
+	stringMalloc = malloc(sizeof(unsigned int)  * (size + 1));
 
 	if (stringMalloc == NULL || size == 0)
 	{
