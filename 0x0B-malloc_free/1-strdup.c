@@ -10,12 +10,16 @@ char *_strdup(char *str)
 	int i = 0;
 	char *stringMalloc;
 
+	if (!str)
+	{
+		return (NULL);
+	}
 	while (str[i])
 	{
 		i++;
 	}
-	stringMalloc = malloc(sizeof(char)  * i);
-	if (stringMalloc == NULL || str[0] == '\0')
+	stringMalloc = malloc(sizeof(char) * i);
+	if (stringMalloc == NULL)
 	{
 		return (NULL);
 	}
@@ -27,4 +31,18 @@ char *_strdup(char *str)
 	}
 	stringMalloc[i] = '\0';
 	return (stringMalloc);
+}
+
+int main(void)
+{
+	char *s;
+
+	s = _strdup(NULL);
+	if (s == NULL)
+	{
+		printf("failed to allocate memory\n");
+		return (1);
+	}
+	free(s);
+	return (0);
 }
