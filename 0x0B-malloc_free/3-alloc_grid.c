@@ -1,0 +1,21 @@
+#include "holberton.h"
+
+/**
+ * alloc_grid - created new array using malloc()
+ * @width: columns of array 2d
+ * @height: rows of array 2d
+ * Return: int** with new array 2d
+ */
+int **alloc_grid(int width, int height)
+{
+	int i, j;
+	int **pointToPointArray2d = malloc(sizeof(int *) * height);
+
+	for (i = 0; i < height; i++)
+		pointToPointArray2d[i] = malloc(sizeof(int) * width);
+	for (i = 0; i < height; i++)
+		for (j = 0; j < width; j++)
+			pointToPointArray2d[i][j] = 0;
+
+	return (pointToPointArray2d);
+}
