@@ -8,4 +8,6 @@
  */
 void free_grid(int **grid, int height)
 {
+	int **n = grid;
+	int he = height;
 }
