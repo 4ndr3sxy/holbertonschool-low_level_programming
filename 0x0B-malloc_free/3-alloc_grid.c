@@ -8,7 +8,7 @@
  */
 int **alloc_grid(int width, int height)
 {
-	int i = 0, j = 0;
+	int i = 0, j = 0, k = 0;
 	int **pointToPointArray2d = malloc(sizeof(int *) * height);
 
 	if (pointToPointArray2d == NULL)
@@ -22,7 +22,18 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 	}
 	for (i = 0; i < height; i++)
+	{
 		pointToPointArray2d[i] = malloc(sizeof(int) * width);
+		if (pointToPointArray2d[i] == NULL)
+		{
+			free(pointToPointArray2d);
+			for (k = 0; k <= i; k++)
+			{
+				free(pointToPointArray2d[k]);
+			}
+			return (NULL);
+		}
+	}
 	for (i = 0; i < height; i++)
 		for (j = 0; j < width; j++)
 			pointToPointArray2d[i][j] = 0;
