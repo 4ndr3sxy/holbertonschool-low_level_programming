@@ -12,9 +12,15 @@ int **alloc_grid(int width, int height)
 	int **pointToPointArray2d = malloc(sizeof(int *) * height);
 
 	if (pointToPointArray2d == NULL)
+	{
+		free(pointToPointArray2d);
 		return (NULL);
+	}
 	if (width < 1 || height < 1)
+	{
+		free(pointToPointArray2d);
 		return (NULL);
+	}
 	for (i = 0; i < height; i++)
 		pointToPointArray2d[i] = malloc(sizeof(int) * width);
 	for (i = 0; i < height; i++)
