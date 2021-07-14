@@ -10,6 +10,7 @@ int **alloc_grid(int width, int height)
 {
 	int i, j;
 	int **pointToPointArray2d = malloc(sizeof(int *) * height);
+
 	if (pointToPointArray2d == NULL)
 		return (NULL);
 	if (width < 1 || height < 1)
