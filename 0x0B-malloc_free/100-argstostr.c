@@ -13,6 +13,7 @@ char *argstostr(int ac, char **av)
 
 	if (concatArgs == NULL || ac == 0 || av == NULL)
 	{
+		free(concatArgs);
 		return (NULL);
 	}
 
