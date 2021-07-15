@@ -11,15 +11,23 @@ char *argstostr(int ac, char **av)
 	int i, j, k = 0;
 	char *concatArgs = malloc(sizeof(char) * 100);
 
-	for (i = 1; i < ac; i++)
+	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
 		{
-			if ((av[i][j] >= 65 && av[i][j] <= 90) ||
-			(av[i][j] >= 97 && av[i][j] <= 122))
+			if (i == 0)
 			{
 				concatArgs[k] = av[i][j];
 				k++;
+			}
+			else
+			{
+				if ((av[i][j] >= 65 && av[i][j] <= 90) ||
+					(av[i][j] >= 97 && av[i][j] <= 122))
+				{
+					concatArgs[k] = av[i][j];
+					k++;
+				}
 			}
 		}
 		concatArgs[k] = '\n';
