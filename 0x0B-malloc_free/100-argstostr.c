@@ -9,7 +9,7 @@
 char *argstostr(int ac, char **av)
 {
 	int i, j, k = 0;
-	char *concatArgs = malloc(sizeof(char) * 100);
+	char *concatArgs = malloc(sizeof(char) * 30000);
 
 	if (concatArgs == NULL || ac == 0 || av == NULL)
 	{
