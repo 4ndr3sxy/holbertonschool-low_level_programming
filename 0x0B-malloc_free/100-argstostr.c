@@ -20,20 +20,8 @@ char *argstostr(int ac, char **av)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
 		{
-			if (i == 0)
-			{
-				concatArgs[k] = av[i][j];
-				k++;
-			}
-			else
-			{
-				if ((av[i][j] >= 65 && av[i][j] <= 90) ||
-					(av[i][j] >= 97 && av[i][j] <= 122))
-				{
-					concatArgs[k] = av[i][j];
-					k++;
-				}
-			}
+			concatArgs[k] = av[i][j];
+			k++;
 		}
 		concatArgs[k] = '\n';
 		k++;
