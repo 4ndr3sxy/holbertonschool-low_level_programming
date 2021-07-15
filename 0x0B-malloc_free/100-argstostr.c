@@ -8,17 +8,28 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int i, j, k = 0;
-	char *concatArgs = malloc(sizeof(char) * 30000);
+	int i, j, k = 0, l = 0, increment = 0;
+	char *concatArgs = malloc(sizeof(char));
 
-	if (concatArgs == NULL || ac == 0 || av == NULL)
+	if (ac == 0 || av == NULL)
 	{
-		free(concatArgs);
 		return (NULL);
 	}
 
 	for (i = 0; i < ac; i++)
 	{
+		while (av[i][l])
+		{
+			l++;
+		}
+		concatArgs = realloc(concatArgs, sizeof(char) * (l + increment));
+		if (concatArgs == NULL)
+		{
+			free(concatArgs);
+			return (NULL);
+		}
+		increment += l;
+
 		for (j = 0; av[i][j] != '\0'; j++)
 		{
 			concatArgs[k] = av[i][j];
