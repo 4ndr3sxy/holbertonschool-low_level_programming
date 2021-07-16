@@ -19,6 +19,9 @@ void print_grid(int **grid, int width, int height);
 
 void free_grid(int **grid, int height);
 
+char *argstostr(int ac, char **av);
 
+char **strtow(char *str);
+void *size_to_pointer_array2d(int countWords, char **pointToPointArray2d);
 
 #endif /* HOLBERTON_H */
