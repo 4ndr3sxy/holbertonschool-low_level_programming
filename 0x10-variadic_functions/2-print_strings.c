@@ -27,8 +27,9 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		}
 		else
 		{
-			printf("%s\n", argument);
+			printf("%s", argument);
 		}
 	}
 	va_end(listArgs);
+	printf("\n");
 }
