@@ -13,7 +13,7 @@ void print_all(const char *const format, ...)
 
 	va_start(listArgs, format);
 
-	while (format[i])
+	while (format[i] && format)
 	{
 		if (!format[i + 1])
 			concatenator = "";
@@ -40,6 +40,6 @@ void print_all(const char *const format, ...)
 		}
 		i++;
 	}
-	printf("\n");
 	va_end(listArgs);
+	printf("\n");
 }
