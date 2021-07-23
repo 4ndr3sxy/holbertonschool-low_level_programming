@@ -24,8 +24,16 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		}
 		else
 		{
-			printf("%d\n", va_arg(listArgs, int));
+			printf("%d", va_arg(listArgs, int));
 		}
 	}
 	va_end(listArgs);
+	printf("\n");
+}
+
+
+int main(void)
+{
+    print_numbers(", ", 4, 0, 98, -1024, 402);
+    return (0);
 }
