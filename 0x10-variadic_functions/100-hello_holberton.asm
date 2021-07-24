@@ -15,21 +15,37 @@
 ; int 20h
 ; end
 
-global _start
+; global _start
 
-section .text:
+; section .text:
+
+; _start:
+;     mov eax, 0x4            ;use the write syscall
+;     mov ebx, 1              ;use stdout as the fd
+;     mov ecx, message        ;use de message as the buffer
+;     mov edx, message_length ; and supply the length
+;     int 0x80
+
+;     mov eax, 0x1
+;     mov ebx, 0
+;     int 0x80
+
+; section .data:
+;     message: db "Hello, Holberton", 0xA
+;     message_length equ $-message
+
+section .data
+    text db "Hello, Holberton",10
+
+section .text
+    global _start
 
 _start:
-    mov eax, 0x4            ;use the write syscall
-    mov ebx, 1              ;use stdout as the fd
-    mov ecx, message        ;use de message as the buffer
-    mov edx, message_length ; and supply the length
-    int 0x80
+    mov rax, 1
+    mov rdi, 1
+    mov rsi, text
+    syscall
 
-    mov eax, 0x1
-    mov ebx, 0
-    int 0x80
-
-section .data:
-    message: db "Hello, Holberton", 0xA
-    message_length equ $-message
+    mov rax, 60
+    mov rdi, 0
+    syscall
