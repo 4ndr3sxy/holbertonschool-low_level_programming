@@ -8,36 +8,34 @@
 void print_all(const char *const format, ...)
 {
 	int i = 0;
-	char *value, *concatenator = ", ";
+	char *value, *concatenator = "";
 	va_list listArgs;
 
 	va_start(listArgs, format);
 
 	while (format[i] && format)
 	{
-		if (!format[i + 1])
-			concatenator = "";
-
 		switch (format[i])
 		{
 		case 'c':
-			printf("%c%s", va_arg(listArgs, int), concatenator);
+			printf("%s%c", concatenator, va_arg(listArgs, int));
 			break;
 		case 'i':
-			printf("%d%s", va_arg(listArgs, int), concatenator);
+			printf("%s%d", concatenator, va_arg(listArgs, int));
 			break;
 		case 'f':
-			printf("%f%s", va_arg(listArgs, double), concatenator);
+			printf("%s%f", concatenator, va_arg(listArgs, double));
 			break;
 		case 's':
 			value = va_arg(listArgs, char *);
 			if (value == NULL)
 				value = "(nil)";
-			printf("%s%s", value, concatenator);
+			printf("%s%s", concatenator, value);
 			break;
 		default:
 			break;
 		}
+		concatenator = ", ";
 		i++;
 	}
 	va_end(listArgs);
