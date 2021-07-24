@@ -9,13 +9,12 @@ void print_all(const char *const format, ...)
 {
 	int i = 0;
 	char *value, *concatenator = "";
+
 	va_list listArgs;
 
 	va_start(listArgs, format);
-
 	if (format)
 	{
-
 		while (format[i])
 		{
 			switch (format[i])
@@ -36,7 +35,6 @@ void print_all(const char *const format, ...)
 				printf("%s%s", concatenator, value);
 				break;
 			default:
-				break;
 			}
 			concatenator = ", ";
 			i++;
