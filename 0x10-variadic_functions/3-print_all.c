@@ -35,6 +35,7 @@ void print_all(const char *const format, ...)
 				printf("%s%s", concatenator, value);
 				break;
 			default:
+				break;
 			}
 			concatenator = ", ";
 			i++;
