@@ -1,6 +1,12 @@
 global      _start
 section     .text
 _start:
+    sub         rsp,8           ; allocate space on the stack to read
+    mov         rdi,0           ; set rdi to 0 to indicate a system read
+    mov         rsi,[rsp-8]
+    mov         rdx,1
+    syscall
+
     mov         rax,1
     mov         rdi,1
     mov         rsi,message
