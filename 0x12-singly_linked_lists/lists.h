@@ -6,16 +6,16 @@
 #include <stdio.h>
 
 /**
- * struct list -node to linked list
+ * struct list_s -node to linked list
  * @str: value a save
  * @len: size of str
  * @next: the next node
  */
 typedef struct list_s
 {
-    char *str;
-    unsigned int len;
-    struct list_s *next;
+	char *str;
+	unsigned int len;
+	struct list_s *next;
 } list_t;
 
 size_t print_list(const list_t *h);
