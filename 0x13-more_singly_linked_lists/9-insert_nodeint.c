@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdarg.h>
 
 /**
  * insert_nodeint_at_index - insert new node in a position 'idx'
@@ -19,7 +20,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	if (!temp)
 	{
 		newNode->next = NULL;
-		temp = newNode;
+		*head = newNode;
 		return (newNode);
 	}
 
