@@ -1,9 +1,15 @@
 #include "main.h"
 
+/**
+ * print_binary - print a integer in binary
+ * @n: of number to print in binary
+ * Return: Without return
+ */
 void print_binary(unsigned long int n)
 {
 	unsigned long int maxValue = 1, temp;
 	int count = 0;
+
 	while (n >= maxValue)
 	{
 		maxValue *= 2;
@@ -32,19 +38,4 @@ void print_binary(unsigned long int n)
 			count--;
 		}
 	}
-}
-
-int main(void)
-{
-	print_binary(0);
-	printf("\n");
-	print_binary(1);
-	printf("\n");
-	print_binary(98);
-	printf("\n");
-	print_binary(1024);
-	printf("\n");
-	print_binary((1 << 10) + 1);
-	printf("\n");
-	return (0);
 }
