@@ -10,6 +10,8 @@ unsigned int binary_to_uint(const char *b)
 	int i = 0, val = 0, log = 0;
 	unsigned int valueInt = 0;
 
+	if (!b)
+		return (0);
 	while (b[i])
 	{
 		if (b[i] != '1' && b[i] != '0')
