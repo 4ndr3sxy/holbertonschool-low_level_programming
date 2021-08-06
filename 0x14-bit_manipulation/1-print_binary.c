@@ -18,7 +18,7 @@ void print_binary(unsigned long int n)
 	maxValue /= 2;
 	if (maxValue < 2)
 	{
-		putchar(n + '0');
+		_putchar(n + '0');
 	}
 	else
 	{
@@ -27,12 +27,12 @@ void print_binary(unsigned long int n)
 			temp = maxValue;
 			if (maxValue <= n)
 			{
-				putchar('1');
+				_putchar('1');
 				n -= temp;
 			}
 			else
 			{
-				putchar('0');
+				_putchar('0');
 			}
 			maxValue /= 2;
 			count--;
