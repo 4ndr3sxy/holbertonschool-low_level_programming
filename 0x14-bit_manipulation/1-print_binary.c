@@ -7,35 +7,8 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int maxValue = 1, temp;
-	int count = 0;
+	if (n > 1)
+		print_binary(n >> 1);
 
-	while (n >= maxValue)
-	{
-		maxValue *= 2;
-		count++;
-	}
-	maxValue /= 2;
-	if (maxValue < 2)
-	{
-		_putchar(n + '0');
-	}
-	else
-	{
-		while (count > 0 || n != 0)
-		{
-			temp = maxValue;
-			if (maxValue <= n)
-			{
-				_putchar('1');
-				n -= temp;
-			}
-			else
-			{
-				_putchar('0');
-			}
-			maxValue /= 2;
-			count--;
-		}
-	}
+	_putchar((n & 1) + '0');
 }
