@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * read_textfile - read filename and save in a new buffer
+ * append_text_to_file - read filename and save text_content at the end of file
  * @filename: name of file to read
- * @letters: letters to read in filename
- * Return: letters counts in new buffer
+ * @text_content: letters to add in filename
+ * Return: 1 to success or -1 on failure
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
