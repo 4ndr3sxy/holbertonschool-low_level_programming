@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * read_textfile - read filename and save in a new buffer
- * @filename: name of file to read
- * @letters: letters to read in filename
- * Return: letters counts in new buffer
+ * create_file - Create a file and save text_content in new file
+ * @filename: name of file to create
+ * @text_content: Content to add in new file
+ * Return: 1 to success or -1 to fail
  */
 int create_file(const char *filename, char *text_content)
 {
