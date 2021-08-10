@@ -7,8 +7,8 @@
 void fibonacci(void)
 {
 	int i, val;
-	unsigned long int num1 = 0, num1Head, num1Tail, num2 = 1, num2Tail;
-	unsigned long int num2Head, tmpResult, tmpResultTail;
+	unsigned long int num1 = 0, num1Tail, num2 = 1, num2Tail;
+	unsigned long int tmpResult, tmpResultTail;
 
 	for (i = 1; i <= 92; i++)
 	{
@@ -19,10 +19,10 @@ void fibonacci(void)
 		num1 = num2;
 		num2 = tmpResult;
 	}
-	num1Head = num1 / 1000000000;
 	num1Tail = num1 % 1000000000;
-	num2Head = num2 / 1000000000;
+	num1 = num1 / 1000000000;
 	num2Tail = num2 % 1000000000;
+	num2 = num2 / 1000000000;
 	for (i = 93; i < 98; i++)
 	{
 		tmpResult = num1 + num2;
