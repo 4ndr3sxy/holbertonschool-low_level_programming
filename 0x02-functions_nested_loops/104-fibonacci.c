@@ -6,26 +6,42 @@
  */
 void fibonacci(void)
 {
-	int i;
+	int i, val;
+	unsigned long int num1 = 0, num1Head, num1Tail, num2 = 1, num2Tail;
+	unsigned long int num2Head, tmpResult, tmpResultTail;
 
-	long double num1 = 0;
-	long double num2 = 1;
-	long double tmpResult;
-
-	for (i = 1; i <= 98; i++)
+	for (i = 1; i <= 92; i++)
 	{
 		tmpResult = num1 + num2;
-
-		printf("%.0Lf", tmpResult);
-
-		putchar(i != 98 ? ',' : '\n');
-		if (i != 98)
-		{
-			putchar(' ');
-		}
+		printf("%lu", tmpResult);
+		putchar(',');
+		putchar(' ');
 		num1 = num2;
 		num2 = tmpResult;
 	}
+	num1Head = num1 / 1000000000;
+	num1Tail = num1 % 1000000000;
+	num2Head = num2 / 1000000000;
+	num2Tail = num2 % 1000000000;
+	for (i = 93; i < 98; i++)
+	{
+		tmpResult = num1 + num2;
+		tmpResultTail = num1Tail + num2Tail;
+		val = tmpResultTail / 1000000000;
+		if (val)
+		{
+			tmpResult = tmpResult + val;
+			tmpResultTail = tmpResultTail % 1000000000;
+		}
+		printf("%lu%lu", tmpResult, tmpResultTail);
+		num2 = num1;
+		num2Tail = num1Tail;
+		num1 = tmpResult;
+		num1Tail = tmpResultTail;
+		if (i < 97)
+			printf(", ");
+	}
+	printf("\n");
 }
 
 /**
