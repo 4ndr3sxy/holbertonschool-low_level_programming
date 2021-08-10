@@ -34,10 +34,10 @@ void fibonacci(void)
 			tmpResultTail = tmpResultTail % 1000000000;
 		}
 		printf("%lu%lu", tmpResult, tmpResultTail);
-		num2 = num1;
-		num2Tail = num1Tail;
-		num1 = tmpResult;
-		num1Tail = tmpResultTail;
+		num1 = num2;
+		num1Tail = num2Tail;
+		num2 = tmpResult;
+		num2Tail = tmpResultTail;
 		if (i < 98)
 			printf(", ");
 	}
