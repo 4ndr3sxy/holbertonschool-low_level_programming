@@ -23,7 +23,7 @@ void fibonacci(void)
 	num1 = num1 / 1000000000;
 	num2Tail = num2 % 1000000000;
 	num2 = num2 / 1000000000;
-	for (i = 93; i < 98; i++)
+	for (i = 93; i <= 98; i++)
 	{
 		tmpResult = num1 + num2;
 		tmpResultTail = num1Tail + num2Tail;
@@ -38,7 +38,7 @@ void fibonacci(void)
 		num2Tail = num1Tail;
 		num1 = tmpResult;
 		num1Tail = tmpResultTail;
-		if (i < 97)
+		if (i < 98)
 			printf(", ");
 	}
 	printf("\n");
