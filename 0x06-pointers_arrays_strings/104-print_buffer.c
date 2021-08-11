@@ -13,7 +13,10 @@ void print_buffer(char *b, int size)
 	int val = 0;
 
 	if (size == 0)
+	{
+		printf("\n");
 		return;
+	}
 
 	for (i = 0; i <= size;)
 	{
@@ -21,13 +24,9 @@ void print_buffer(char *b, int size)
 		for (j = i; j < (i + 10); j++)
 		{
 			if (j >= size)
-			{
 				printf("     ");
-			}
 			else
-			{
 				printf("%02x%02x ", b[j], b[j + 1]);
-			}
 			j++;
 		}
 		for (k = i; k < (i + 10); k++)
