@@ -27,16 +27,16 @@ void print_buffer(char *b, int size)
 				printf("     ");
 			else
 				printf("%02x%02x ", b[j], b[j + 1]);
+			if ((j % 2) != 0 && j != 0)
+				printf(" ");
 			j++;
 		}
 		for (k = i; k < (i + 10); k++)
 		{
 			if ((b[k] >= 0 && b[k] <= 9) ||  b[k] == '\n' || (b[k] == '\0' && k != 127))
 			{
-				if (b[k] == '\0' && k == size)
-				{
+				if (b[k] == '\0' || k == 126)
 					break;
-				}
 				val = 1;
 			}
 			printf("%c", (val ? '.' : b[k]));
