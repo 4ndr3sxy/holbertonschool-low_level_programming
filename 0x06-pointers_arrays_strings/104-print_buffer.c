@@ -10,7 +10,6 @@ void print_buffer(char *b, int size)
 {
 	int hex = 0;
 	int i, j, k;
-	int val = 0;
 
 	if (size == 0)
 	{
@@ -33,18 +32,17 @@ void print_buffer(char *b, int size)
 		}
 		for (k = i; k < (i + 10); k++)
 		{
-			if ((b[k] >= 0 && b[k] <= 9) ||  b[k] == '\n' || (b[k] == '\0' && k != 127))
-			{
-				if (b[k] == '\0' || k == 126)
-					break;
-				val = 1;
-			}
-			printf("%c", (val ? '.' : b[k]));
-			val = 0;
+			if (k >= size)
+				break;
+			else if (b[k] > 30 && b[k] < 127)
+				printf("%c", b[k]);
+			else
+				printf(".");
 		}
-		printf("\n");
 		i += 10;
 		hex += 10;
+		if (i <= size)
+			printf("\n");
 	}
 	printf("\n");
 }
