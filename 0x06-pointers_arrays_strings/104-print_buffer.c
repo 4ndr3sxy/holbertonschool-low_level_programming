@@ -45,13 +45,3 @@ void print_buffer(char *b, int size)
 	}
 	printf("\n");
 }
-
-int main(void)
-{
-	char buffer[] = "Talk is cheap. Show me the code.";
-
-	printf("%s\n", buffer);
-	printf("---------------------------------\n");
-	print_buffer(buffer, sizeof(buffer));
-	return (0);
-}
