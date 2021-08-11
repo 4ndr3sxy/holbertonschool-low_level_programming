@@ -27,9 +27,9 @@ void print_buffer(char *b, int size)
 				printf("     ");
 			else
 				printf("%02x%02x ", b[j], b[j + 1]);
+			j++;
 			if ((j % 2) != 0 && j != 0)
 				printf(" ");
-			j++;
 		}
 		for (k = i; k < (i + 10); k++)
 		{
