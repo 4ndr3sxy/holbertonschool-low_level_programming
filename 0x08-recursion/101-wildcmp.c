@@ -1,60 +1,74 @@
 #include "holberton.h"
 
 /**
- * search_palindrome - search if the chain is palindrome
- * @string: chain
- * @i: size of chain
- * @i1: middle to chain
- * @j: increment
- * Return: 1 or 0
- */
-int with_asterisk(char *string1, char *string2)
-{
-
-}
-
-int without_asterisk(char *string1, char *string2)
-{
-	
-}
-/**
- * asterisl_in_chain - search the size of the chain
- * @s: Chain
- * @i: increment
- * Return: size of chain
- */
-int asterisl_in_chain(char *s, int i)
-{
-	if (s[i] == '*')
-	{
-		return (1);
-	}
-	else
-	{
-		i++;
-		asterisl_in_chain(s, i);
-		return (0);
-	}
-}
-
-/**
  * is_palindrome - send the char * to function search_palindrome()
  * @s: Chain of characters
  * Return: 1 to palindrome or 0 to not palindrome.
  */
 int wildcmp(char *s1, char *s2)
 {
-	int i = 0, i1, j = 0, validater;
+	int val;
 
-	i = asterisl_in_chain(s2, i);
-	if (i)
+	if (*s1 == '\0' && *s2 == '\0')
+		return (1);
+	if (*s2 == '*')
 	{
-		validater = with_asterisk(s1, s2);
+		if (*(s2 + 1) != '\0' && *s1 == '\0')
+		{
+			return (0);
+		}
 	}
-	else
+	if (*s1 == *s2)
 	{
-		validater = without_asterisk(s1, s2);
+		s1 = s1 + 1;
+		s2 = s2 + 1;
+		return (wildcmp(s1, s2));
 	}
+	if (*s2 == '*')
+	{
+		val = wildcmp(s1, s2 + 1);
+		if (*(s2 + 1) == '*')
+		{
+			s2 = s2 + 1;
+			return (wildcmp(s1, s2));
+		}
+		else if (val)
+		{
+			return (1);
+		}
+		else
+			return (wildcmp(s1 + 1, s2));
+	}
+	return (0);
+}
 
-	return (validater);
+int main(void)
+{
+	int r;
+
+	r = wildcmp("main.c", "*.c");
+	printf("%d\n", r);
+	r = wildcmp("main.c", "m*a*i*n*.*c*");
+	printf("%d\n", r);
+	r = wildcmp("main.c", "main.c");
+	printf("%d\n", r);
+	r = wildcmp("main.c", "m*c");
+	printf("%d\n", r);
+	r = wildcmp("main.c", "ma********************************c");
+	printf("%d\n", r);
+	r = wildcmp("main.c", "*");
+	printf("%d\n", r);
+	r = wildcmp("main.c", "***");
+	printf("%d\n", r);
+	r = wildcmp("main.c", "m.*c");
+	printf("%d\n", r);
+	r = wildcmp("main.c", "**.*c");
+	printf("%d\n", r);
+	r = wildcmp("main-main.c", "ma*in.c");
+	printf("%d\n", r);
+	r = wildcmp("main", "main*d");
+	printf("%d\n", r);
+	r = wildcmp("abc", "*b");
+	printf("%d\n", r);
+	return (0);
 }
