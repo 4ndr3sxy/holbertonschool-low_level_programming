@@ -23,10 +23,9 @@ void print_buffer(char *b, int size)
 		for (j = i; j < (i + 10); j++)
 		{
 			if (j >= size)
-				printf("     ");
+				printf("  ");
 			else
-				printf("%02x%02x ", b[j], b[j + 1]);
-			j++;
+				printf("%02x", b[j]);
 			if ((j % 2) != 0 && j != 0)
 				printf(" ");
 		}
@@ -45,4 +44,14 @@ void print_buffer(char *b, int size)
 			printf("\n");
 	}
 	printf("\n");
+}
+
+int main(void)
+{
+	char buffer[] = "Talk is cheap. Show me the code.";
+
+	printf("%s\n", buffer);
+	printf("---------------------------------\n");
+	print_buffer(buffer, sizeof(buffer));
+	return (0);
 }
