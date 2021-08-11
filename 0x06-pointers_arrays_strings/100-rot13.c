@@ -7,14 +7,20 @@
  */
 char *rot13(char *cc)
 {
-	int i = 0;
+	int i, j;
+
+	char normal[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char rot13[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	for (i = 0; cc[i]; i++)
 	{
-		if ((*(cc + i) >= 97 && *(cc + i) <= 109) ||
-		(*(cc + i) >= 65 && *(cc + i) <= 77))
+		for (j = 0; normal[j]; j++)
 		{
-			cc[i] = cc[i] + 13;
+			if (cc[i] == normal[j])
+			{
+				cc[i] = rot13[j];
+				break;
+			}
 		}
 	}
 	return (cc);
