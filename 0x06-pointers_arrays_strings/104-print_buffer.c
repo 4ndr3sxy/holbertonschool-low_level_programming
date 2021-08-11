@@ -12,12 +12,15 @@ void print_buffer(char *b, int size)
 	int i, j, k;
 	int val = 0;
 
+	if (size == 0)
+		return;
+
 	for (i = 0; i <= size;)
 	{
 		printf("%08x: ", hex);
 		for (j = i; j < (i + 10); j++)
 		{
-			if (j >= 126)
+			if (j >= size)
 			{
 				printf("     ");
 			}
@@ -31,7 +34,7 @@ void print_buffer(char *b, int size)
 		{
 			if ((b[k] >= 0 && b[k] <= 9) ||  b[k] == '\n' || (b[k] == '\0' && k != 127))
 			{
-				if (b[k] == '\0' && k == 126)
+				if (b[k] == '\0' && k == size)
 				{
 					break;
 				}
