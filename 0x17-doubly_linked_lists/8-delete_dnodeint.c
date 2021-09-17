@@ -37,12 +37,14 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 				temp = copyNode->next;
 				copyNode->next = copyNode->next->next;
 				free(temp), temp = copyNode->next->next;
-				temp->prev = copyNode, return (1);
+				temp->prev = copyNode;
+				return (1);
 			}
 			else
 			{
 				temp = copyNode->next, free(temp);
-				copyNode->next = NULL, return (1);
+				copyNode->next = NULL;
+				return (1);
 			}
 		}
 		countIndex++, copyNode = copyNode->next;
