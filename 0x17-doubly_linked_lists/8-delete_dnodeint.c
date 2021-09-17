@@ -13,7 +13,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	dlistint_t *copyNode = NULL, *temp = NULL;
 	unsigned int countIndex = 0;
 
-	if (!(*head))
+	if (*head == NULL)
 		return (-1);
 	copyNode = *head;
 	if (index == 0)
