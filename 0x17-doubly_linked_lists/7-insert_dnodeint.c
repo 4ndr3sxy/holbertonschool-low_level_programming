@@ -20,7 +20,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (!*h)
 	{
 		*h = newNode;
-		return (NULL);
+		return (newNode);
 	}
 	copyNode = *h;
 	copyCopyNode = copyNode;
