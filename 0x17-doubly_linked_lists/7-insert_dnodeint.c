@@ -13,13 +13,16 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	unsigned int countIndex = 0;
 	dlistint_t *copyNode = NULL, *newNode = NULL, *copyCopyNode = NULL;
 
-	if (!*h || !h)
-		return (NULL);
 	newNode = malloc(sizeof(dlistint_t));
-	if (!newNode)
-		return (NULL);
 	copyNode = *h, newNode->n = n;
 	newNode->next = NULL, newNode->prev = NULL;
+	if (!newNode)
+		return (NULL);
+	if (!*h)
+	{
+		*h = newNode;
+		return (NULL);
+	}
 	copyCopyNode = copyNode;
 	if (idx == 0)
 	{
@@ -32,10 +35,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		copyCopyNode = copyNode->next;
 		if (countIndex + 1 == idx)
 		{
-			copyNode->next = newNode;
-			newNode->prev = copyNode;
-			newNode->next = copyCopyNode;
-			copyCopyNode->prev = newNode;
+			copyNode->next = newNode, newNode->prev = copyNode;
+			newNode->next = copyCopyNode, copyCopyNode->prev = newNode;
 			return (newNode);
 		}
 		copyNode = copyNode->next;
