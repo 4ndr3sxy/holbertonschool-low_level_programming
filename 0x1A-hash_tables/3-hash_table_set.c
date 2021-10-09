@@ -34,7 +34,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (temp->key == (char *)key)
 		{
-			printf("Igualdad\n");
 			temp->value = (char *)value;
 			free(newNode);
 			val = 1;
