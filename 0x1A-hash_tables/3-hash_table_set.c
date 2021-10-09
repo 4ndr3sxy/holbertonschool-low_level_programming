@@ -14,7 +14,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *temp = NULL;
 	int val = 0;
 
-	if (!key || !value)
+	if (!ht || !key || !value)
 		return (0);
 	valKey = key_index((unsigned char *)key, ht->size);
 	newNode = malloc(sizeof(hash_node_t));
@@ -34,7 +34,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (temp->key == (char *)key)
 		{
-			printf("Igualdad\n");
 			temp->value = (char *)value;
 			free(newNode);
 			val = 1;
