@@ -1,4 +1,5 @@
 #include "hash_tables.h"
+#include <unistd.h>
 
 /**
  * hash_table_set - Set node to hash table
@@ -34,7 +35,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (strcmp(temp->key, key) == 0)
 		{
-			free(temp->value);
 			temp->value = strdup(value);
 			free(newNode);
 			val = 1;
