@@ -29,9 +29,12 @@ void hash_table_print(const hash_table_t *ht)
 	int val = 0;
 	hash_node_t *temp = NULL;
 
+	if (!ht)
+		return;
+
 	printf("{");
 	countW = count_words(ht);
-	for (; ht && i < ht->size; i++)
+	for (; i < ht->size; i++)
 	{
 		if (ht->array[i])
 		{
