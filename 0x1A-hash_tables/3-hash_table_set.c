@@ -40,13 +40,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (strcmp(temp->key, key) == 0)
 		{
-			free(temp->value), free(newNode);
-			temp->value = strdup(value);
+			free(temp->value), free(newNode), temp->value = strdup(value);
+			if (!temp->value)
+				return (0);
 			return (1);
 		}
 		temp = temp->next;
 	}
-	newNode->next = temp;
-	ht->array[valKey] = newNode;
+	newNode->next = temp, ht->array[valKey] = newNode;
 	return (1);
 }
