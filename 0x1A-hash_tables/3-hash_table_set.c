@@ -1,5 +1,4 @@
 #include "hash_tables.h"
-#include <unistd.h>
 
 /**
  * hash_table_set - Set node to hash table
@@ -16,7 +15,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (!ht || !key || !value || !*key)
 		return (0);
-	valKey = key_index((unsigned char *)key, ht->size);
+	valKey = key_index((const unsigned char *)key, ht->size);
 	newNode = malloc(sizeof(hash_node_t));
 	if (!newNode)
 		return (0);
@@ -34,14 +33,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (strcmp(temp->key, key) == 0)
 		{
+			/*free(temp->value);*/
 			temp->value = strdup(value);
 			free(newNode);
 			return (1);
 		}
-		if (temp->next)
-			temp = temp->next;
-		else
-			break;
+		/*if (temp->next)*/
+		temp = temp->next;
+		/*else*/
+			/*break;*/
 	}
 	/*temp->next = newNode;*/
 	/*newNode->next = ht->array[valKey];*/
