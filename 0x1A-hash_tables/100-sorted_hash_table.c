@@ -7,14 +7,14 @@
  */
 shash_table_t *shash_table_create(unsigned long int size)
 {
-	hash_table_t *hashTable = NULL;
+	shash_table_t *hashTable = NULL;
 
-	hashTable = malloc(sizeof(hash_table_t));
+	hashTable = malloc(sizeof(shash_table_t));
 	if (!hashTable)
 		return (NULL);
 	hashTable->size = size;
 
-	hashTable->array = calloc(size, sizeof(hash_node_t *));
+	hashTable->array = calloc(size, sizeof(shash_node_t *));
 	if (!hashTable->array)
 	{
 		free(hashTable);
@@ -34,7 +34,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int valKey = 0;
-	hash_node_t *newNode = NULL, *temp = NULL;
+	shash_node_t *newNode = NULL, *temp = NULL;
 
 	if (!ht || !key || !value || !*key)
 		return (0);
@@ -52,7 +52,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		}
 		temp = temp->next;
 	}
-	newNode = malloc(sizeof(hash_node_t));
+	newNode = malloc(sizeof(shash_node_t));
 	if (!newNode)
 		return (0);
 	newNode->key = strdup(key);
@@ -80,7 +80,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
 	unsigned long int valKey = 0;
-	hash_node_t *tempArray = NULL;
+	shash_node_t *tempArray = NULL;
 
 	if (!ht || !key)
 		return (NULL);
@@ -106,7 +106,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 void shash_table_print(const shash_table_t *ht)
 {
 	unsigned long int i = 0;
-	hash_node_t *node = NULL, *tmp = NULL;
+	shash_node_t *node = NULL, *tmp = NULL;
 	int val = 0;
 
 	if (!ht)
@@ -140,7 +140,7 @@ void shash_table_print(const shash_table_t *ht)
  */
 void shash_table_print_rev(const shash_table_t *ht)
 {
-	print("");
+	(void)ht;
 }
 
 /**
@@ -151,7 +151,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 void shash_table_delete(shash_table_t *ht)
 {
 	unsigned long int i = 0;
-	hash_node_t *currentNode = NULL, *nextNode = NULL;
+	shash_node_t *currentNode = NULL, *nextNode = NULL;
 
 	if (ht == NULL)
 		return;
