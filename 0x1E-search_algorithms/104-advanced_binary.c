@@ -60,7 +60,7 @@ int binary_search_recursion(int *array, int x, int y, int value)
 }
 
 /**
- * binary_search - Search algorithm Binary
+ * advanced_binary - Search algorithm advanced_binary
  * @array: array with values
  * @size: size of array with values
  * @value: value to search in array
