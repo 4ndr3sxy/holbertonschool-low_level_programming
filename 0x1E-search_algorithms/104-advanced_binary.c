@@ -34,6 +34,12 @@ int binary_search_recursion(int *array, int x, int y, int value)
 
 	print_array(array, x, y);
 	mid = (x + y) / 2;
+	if (mid == y)
+	{
+		if (array[mid] == value)
+			return (mid);
+		return (-1);
+	}
 	if (mid < y)
 	{
 		if (array[mid] == value)
