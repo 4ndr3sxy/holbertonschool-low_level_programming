@@ -16,7 +16,7 @@
 listint_t *print_list_recursion(listint_t *low, size_t high,
 								int value, int size)
 {
-	if (low && low->index <= high && low->index < size)
+	if (low && low->index <= high && low->index < (size_t)size)
 	{
 		printf("Value checked array[%ld] = [%d]\n", low->index, low->n);
 		if (low->n == value)
@@ -87,13 +87,19 @@ listint_t *search_list_recursion(listint_t *nodeHigh, size_t size, int value)
  */
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-	int low = 0, high = 0;
+	int low = 0;
 	listint_t *temp = NULL;
 	listint_t *nodeHigh = NULL;
 	listint_t *nodeLow = NULL;
 
 	temp = list;
 	nodeLow = list;
+	low = sqrt(size);
+	while (low != 0)
+	{
+		temp = temp->next;
+		low--;
+	}
 	nodeHigh = search_list_recursion(temp, size, value);
 
 	if (!nodeHigh)
